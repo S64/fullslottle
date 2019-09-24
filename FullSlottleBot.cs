@@ -55,7 +55,7 @@ namespace FullSlottle
                 // メンション位置を見つける
                 var firstMentionIndex = Array.FindIndex(parts, (item) => { return item.StartsWith("<@"); });
 
-                if (parts.Length > (firstMentionIndex+1))
+                if (parts.Length < (firstMentionIndex+1))
                 {
                     // メンション位置よりも先にアイテムが無い場合は無視
                     Console.WriteLine("Ignored reason item not found.");
