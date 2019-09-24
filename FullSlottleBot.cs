@@ -33,9 +33,10 @@ namespace FullSlottle
 
             var data = turnContext.Activity.ChannelData as SlackChannelData;
 
-            if (!turnContext.Activity.Type.Equals(ActivityTypes.Message) || data.IsMention != true || data.IsBot != true)
+            if (!turnContext.Activity.Type.Equals(ActivityTypes.Message) || data.IsMention != true || data.IsBot == true)
             {
                 // 人以外やメンション等以外を無視
+                Console.WriteLine("Ignored reason not supported message type.");
                 return;
             }
 
@@ -57,6 +58,7 @@ namespace FullSlottle
                 if (parts.Length > (firstMentionIndex+1))
                 {
                     // メンション位置よりも先にアイテムが無い場合は無視
+                    Console.WriteLine("Ignored reason item not found.");
                     return;
                 }
 
