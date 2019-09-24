@@ -66,12 +66,12 @@ namespace FullSlottle
                 var items = parts.Skip(firstMentionIndex + 1).ToArray();
 
                 // シャッフルして1つだけ取得
-                response = items.OrderBy((_) => { return Guid.NewGuid(); }).First();
+                response = (items.OrderBy((_) => { return Guid.NewGuid(); }).First()) + " を選んだよ";
             }
 
             await turnContext.SendActivityAsync(
                 MessageFactory.Text(
-                    $"{response} を選んだよ"
+                    response
                 ),
                 cancellationToken
             );
