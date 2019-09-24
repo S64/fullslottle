@@ -63,7 +63,7 @@ namespace FullSlottle
                 }
 
                 // メンション位置 + 1から先をシャッフル対象として取り出す
-                var items = parts.Skip(firstMentionIndex + 1);
+                var items = parts.Skip(firstMentionIndex + 1).ToArray();
 
                 // シャッフルして1つだけ取得
                 response = items.OrderBy((_) => { return Guid.NewGuid(); }).First();
