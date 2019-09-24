@@ -9,7 +9,7 @@ using S64.Bot.Builder.Adapters.Slack;
 namespace FullSlottle
 {
 
-    class NondeNakunaiBot : ActivityHandler
+    class FullSlottleBot : ActivityHandler
     {
         
         // 区切り文字一覧
